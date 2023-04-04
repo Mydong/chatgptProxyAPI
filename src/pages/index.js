@@ -61,7 +61,9 @@ async function submit(key) {
       const usageData = await response.json();
       console.log(usageData);
       // 账号类型
-      const plan = subscriptionData.plan.title
+      // const plan = subscriptionData.plan.title
+      const plan = (subscriptionData.plan.title === "Pay-as-you-go") ? "Pay-as-you-go" : subscriptionData.plan.id;
+
       // 总
       const total_granted = subscriptionData.hard_limit_usd;
       // 已用
